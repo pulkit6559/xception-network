@@ -24,3 +24,13 @@ class EntryBlock(nn.module):
 
         if strides > 1:
             layers.append(nn.MaxPool2d(3, strides, 1))
+
+        self.layers = nn.Sequential(*layers)
+
+    def forward(self, input_mat):
+        x = self.rep(input_mat)
+        skip = self.skip(input_mat)
+        skip = self.skipbn(skip)
+        x += skip
+
+        return x
