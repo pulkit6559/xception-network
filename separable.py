@@ -1,4 +1,5 @@
-from torch import nn
+import torch.nn as nn
+
 
 class SeparableConv2d(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size=1, stride=1, padding=0, dilation=1, bias=False):
