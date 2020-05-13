@@ -3,7 +3,7 @@ from separable import SeparableConv2d
 
 
 class MiddleBlock(nn.module):
-    def __init__(self, in_filters, out_filters, reps, strides=1):
+    def __init__(self, in_filters, out_filters, reps):
         super(MiddleBlock, self).__init__()
 
         self.relu = nn.ReLU(inplace=True)
